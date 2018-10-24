@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Just Ask - An application to stimulate question asking for NUS Students</title>
+
+
+  <link rel="stylesheet" href="https://unpkg.com/element-ui@1.1.6/lib/theme-default/index.css">
+
+      <link rel="stylesheet" href="/style.78032849.css">
+
+
+<script src="/style.78032849.js"></script></head>
+
+<body>
+
+  <div id="app" v-cloak="">
+      <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#fff" text-color="#fff" active-text-color="#ffd04b">
+      <el-row>
+        <el-col :span="4" class="navbar__logo-box">
+          <img src="/logo.d9cf16c7.png" alt="" vspace="11" class="navbar__logo">
+          <el-menu-item index="1">JUST ASK!</el-menu-item>
+        </el-col>
+        <el-col :span="20" class="navbar__menu-box">
+          <el-menu-item index="2" disabled="">Suggested Questions</el-menu-item>
+          <el-menu-item index="3" disabled="">My Questions</el-menu-item>
+          <el-menu-item index="4" disabled="">My Modules</el-menu-item>
+          <el-submenu index="5">
+            <template slot="title">Reports</template>
+            <el-menu-item index="2-1">GPA</el-menu-item>
+            <el-menu-item index="2-2">Demographic</el-menu-item>
+          </el-submenu>
+        </el-col>
+      </el-row></el-menu>
+  
+
+  <script>"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  data: function data() {
+    return {
+      activeIndex: '1',
+      activeIndex2: '1'
+    };
+  },
+  methods: {
+    handleSelect: function handleSelect(key, keyPath) {
+      console.log(key, keyPath);
+    }
+  }
+};
+exports.default = _default;</script>
+
+ <div class="container">
+
+  <el-row class="search-wrapper" :gutter="10">
+
+    <el-col :lg="12" :md="12" :sm="12" :xs="24">
+      <el-input placeholder="Filter by Name" icon="search" v-model="filter">
+    </el-input></el-col>
+
+    <el-col class="col-space" :lg="6" :md="6" :sm="6" :xs="24"> &nbsp; </el-col>
+
+    <el-col :lg="6" :md="6" :sm="6" :xs="24">
+      <el-select v-model="sort" placeholder="Sort by">
+        <el-option v-for="item in options" :label="item.label" :value="item.value">
+        </el-option>
+      </el-select>
+    </el-col>
+
+  </el-row> <!-- search wrapper -->
+
+  <el-row :gutter="10">
+    <el-col v-for="player in getPlayers" :xs="24" :sm="12" :md="8">
+      <div class="box">
+        <div> {{ player.name }} </div>
+        <div class="box__subtitle"> {{ player.sport }} </div>
+        <div class="box__subtitle"> {{ player.views }} views </div>
+      </div>
+    </el-col>
+
+    <el-col v-if="getPlayers.length === 0" :xs="24" :sm="24" :md="24">
+      <div class="box box__empty"> No Match Found</div>
+    </el-col>
+
+  </el-row> <!-- results -->
+
+ </div> <!-- container -->
+
+</div> <!-- #app -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui@1.1.6/lib/index.js"></script>
+
+
+
+    <script src="/js.00a46daa.js"></script>
+
+
+
+
+</body>
+
+</html>

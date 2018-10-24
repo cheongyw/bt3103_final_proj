@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+[v-cloak] {
+  display: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #123;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search-wrapper {
+  margin: 10px 0;
+}
+
+.col-space {
+  content: '&nbsp;';
+}
+@media screen and (max-width: 767px) {
+  .col-space {
+    display: none;
+  }
+}
+
+.container {
+  max-width: 980px;
+  margin: 20px auto;
+}
+@media screen and (max-width: 1050px) {
+  .container {
+    width: 95%;
+  }
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  min-height: 150px;
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+.box__subtitle {
+  color: #a6a6a6;
+}
+.box__empty {
+  background-color: transparent;
+  box-shadow: none;
+}
+.box:hover {
+  cursor: pointer;
+}
+
+.el-select {
+  width: 100%;
+}
