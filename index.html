@@ -7,7 +7,6 @@
 
 
   <link rel='stylesheet' href='https://unpkg.com/element-ui@1.1.6/lib/theme-default/index.css'>
-  <link rel="stylesheet" href="node_modules/vue-calendar-heatmap/dist/vue-calendar-heatmap.css"/>
   <link rel="stylesheet" href="css/style.css">
 
 
@@ -129,15 +128,26 @@
         width="120">
       </el-table-column>
     </el-table>
+  </br></br>
   </el-col>
 </div>
+
+
+  <div class="container">
+  <el-col>
+    <column-chart :data="charts.barData2.data"></column-chart>
+  </br></br>
+    <timeline :data="[['Y1S1', '1789-04-29', '1797-03-03'], ['Y1S2', '1797-04-29', '1797-10-03'], ['Y1S3', '1797-03-03', '1801-03-03']]"></timeline>
+
+  </el-col>
+  </div>
   </div>
 
 </div> <!-- #app -->
 
   <script src='https://unpkg.com/vue/dist/vue.js'></script>
   <script src='https://unpkg.com/element-ui@1.2.9/lib/index.js'></script>
-  <script src='node_modules/vue-calendar-heatmap/dist/vue-calendar-heatmap.browser.js'></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 	<script src="https://unpkg.com/chart.js@2.7.2/dist/Chart.bundle.js"></script>
 	<script src="https://unpkg.com/vue-chartkick@0.4.0"></script>

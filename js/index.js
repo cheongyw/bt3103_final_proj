@@ -15,6 +15,13 @@ const router = new VueRouter({
   routes // short for `routes: routes`
 })
 
+var db = firebase.initializeApp({
+        databaseURL: 'https://wala-9b4ce.firebaseio.com/'
+      }).database()
+
+var chartsRef = db.ref('charts')
+
+
 new Vue({
   el: '#app',
   router,
@@ -55,12 +62,18 @@ new Vue({
         question: 'How do I use recursion to do depth first search?',
         comments: '2'
       }],
-
+      localLineData: [["Sun", 32], ["Mon", 46], ["Tue", 28]],
       dashboardStats: [
       { title: 'Questions asked in Total', value: '4', color: '#000'},
       { title: 'Questions asked this Sem', value: '2', color: '#000'},
       { title: 'Asker Level', value: 'Novice', color: '#000'}] };
   },
+  firebase: {
+    charts: {
+        source: db.ref('charts'),
+      // optionally bind as an object
+        asObject: true,
+    }},
   computed: {
     getPlayers: function getPlayers() {var _this = this;
 

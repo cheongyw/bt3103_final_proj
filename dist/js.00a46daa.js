@@ -127,6 +127,10 @@ var router = new VueRouter({
   routes: routes // short for `routes: routes`
 
 });
+var db = firebase.initializeApp({
+  databaseURL: 'https://wala-9b4ce.firebaseio.com/'
+}).database();
+var chartsRef = db.ref('charts');
 new Vue({
   el: '#app',
   router: router,
@@ -193,6 +197,7 @@ new Vue({
         question: 'How do I use recursion to do depth first search?',
         comments: '2'
       }],
+      localLineData: [["Sun", 32], ["Mon", 46], ["Tue", 28]],
       dashboardStats: [{
         title: 'Questions asked in Total',
         value: '4',
@@ -207,6 +212,13 @@ new Vue({
         color: '#000'
       }]
     };
+  },
+  firebase: {
+    charts: {
+      source: db.ref('charts'),
+      // optionally bind as an object
+      asObject: true
+    }
   },
   computed: {
     getPlayers: function getPlayers() {
@@ -257,7 +269,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57507" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49577" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
