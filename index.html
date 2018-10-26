@@ -8,7 +8,7 @@
 
   <link rel='stylesheet' href='https://unpkg.com/element-ui@1.1.6/lib/theme-default/index.css'>
   <link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/v-charts/lib/style.min.css">
 
 </head>
 
@@ -49,9 +49,7 @@
        <el-col :lg="12" :md="12" :sm="12" :xs="24">
          <el-input placeholder="Search Module Code / Topic" icon="search" v-model="filter">
        </el-col>
-
        <el-col class="col-space" :lg="6" :md="6" :sm="6" :xs="24"> &nbsp; </el-col>
-
        <el-col :lg="6" :md="6" :sm="6" :xs="24">
          <el-select v-model="sort" placeholder="Sort by">
            <el-option
@@ -92,11 +90,11 @@
         <div slot="header" class="clearfix">
           <span>{{ item.title }}</span>
         </div>
-        <div class="text item">
+        <div class="text-large">
           {{ item.value }}
         </div>
+      </el-card>
       <el-col>
-    </el-card>
       </br> </br>
     </div> <!-- container -->
     <!-- <div>
@@ -105,8 +103,31 @@
 
     <div class="container">
     <el-col>
-    <column-chart :colors="['#1E7BE4']" :data="charts.barData2.data"></column-chart>
+      <el-card class="box-card">
+        <div slot="header" class="clearfix">
+          <span>Questions asked by Semester</span>
+        </div>
+        <div class="text item">
+          <column-chart :colors="['#1E7BE4']" :data="charts.barData2.data"></column-chart>
+        </div>
+      </el-card>
     </br></br>
+
+      <el-card class="box-card">
+        <div slot="header" class="clearfix">
+          <span>Heatmap of questions asked by Semester</span>
+        </div>
+        <div class="text item">
+          <ve-heatmap :data="chartData" :settings="{
+              xAxisList: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12', 'Week 13'],
+              yAxisList: ['Year 1 Sem 1', 'Year 1 Sem 2', 'Year 2 Sem 1', 'Year 2 Sem 2', 'Year 3 Sem 1', 'Year 3 Sem 2']
+            }">
+          </ve-heatmap>
+        </div>
+      </el-card>
+
+    </br></br>
+
     <el-table
       :data="tableData"
       style="width: 100%">
@@ -135,20 +156,14 @@
 </div>
 
 
-  <div class="container">
-  <el-col>
-    <timeline :data="[['Y1S1', '1789-04-29', '1797-03-03'], ['Y1S2', '1797-04-29', '1797-10-03'], ['Y2S1', '1797-03-03', '1801-03-03'],  ['Y1S3', '1797-03-03', '1801-03-03']]"></timeline>
-  </el-col>
-  </div>
-  </div>
-
 </div> <!-- #app -->
-
   <script src='https://unpkg.com/vue/dist/vue.js'></script>
   <script src='https://unpkg.com/element-ui@1.2.9/lib/index.js'></script>
   <script src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 	<script src="https://unpkg.com/chart.js@2.7.2/dist/Chart.bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/v-charts/lib/index.min.js"></script>
 	<script src="https://unpkg.com/vue-chartkick@0.4.0"></script>
 	<script src="https://gstatic.com/firebasejs/4.2.0/firebase.js"></script>
 	<script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>

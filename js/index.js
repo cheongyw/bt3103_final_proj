@@ -41,6 +41,25 @@ new Vue({
       { name: 'Analytics for Market Trading', sport: 'BT4013', views: 403, color: '#C8D96F' },
       { name: 'Data Driven Marketing', sport: 'BT4211', views: 8843, color: '#7678ED' }],
 
+      chartData: {
+        columns: ['week', 'location', 'count'],
+        rows: [
+          { 'week': 'Week 1', 'location': 'Year 1 Sem 1', 'count': 1 },
+          { 'week': 'Week 2', 'location': 'Year 1 Sem 1', 'count': 4 },
+          { 'week': 'Week 3', 'location': 'Year 1 Sem 1', 'count': 8 },
+          { 'week': 'Week 4', 'location': 'Year 1 Sem 2', 'count': 2 },
+          { 'week': 'Week 5', 'location': 'Year 1 Sem 2', 'count': 1 },
+          { 'week': 'Week 3', 'location': 'Year 2 Sem 1', 'count': 3 },
+          { 'week': 'Week 2', 'location': 'Year 2 Sem 1', 'count': 8 },
+          { 'week': 'Week 4', 'location': 'Year 2 Sem 2', 'count': 7 },
+          { 'week': 'Week 9', 'location': 'Year 2 Sem 2', 'count': 3 },
+          { 'week': 'Week 13', 'location': 'Year 3 Sem 1', 'count': 3 },
+          { 'week': 'Week 13', 'location': 'Year 3 Sem 1', 'count': 3 },
+          { 'week': 'Week 12', 'location': 'Year 3 Sem 2', 'count': 3 },
+          { 'week': 'Week 13', 'location': 'Year 3 Sem 2', 'count': 5 }
+        ]
+      },
+
       tableData: [{
         date: '2018-05-03',
         module: 'BT3102',
@@ -62,7 +81,9 @@ new Vue({
         question: 'How do I use recursion to do depth first search?',
         comments: '2'
       }],
+
       localLineData: [["Sun", 32], ["Mon", 46], ["Tue", 28]],
+
       dashboardStats: [
       { title: 'Questions asked in Total', value: '4', color: '#000'},
       { title: 'Questions asked this Sem', value: '2', color: '#000'},

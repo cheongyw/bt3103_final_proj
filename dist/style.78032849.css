@@ -37,6 +37,12 @@ body {
   background-color: #EDF1F5;
 }
 
+.text-large {
+  font-size: 25px;
+  color: #1E7BE4;
+  text-align: center;
+}
+
 .box {
   display: flex;
   flex-direction: column;

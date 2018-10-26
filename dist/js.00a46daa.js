@@ -176,6 +176,62 @@ new Vue({
         views: 8843,
         color: '#7678ED'
       }],
+      chartData: {
+        columns: ['week', 'location', 'count'],
+        rows: [{
+          'week': 'Week 1',
+          'location': 'Year 1 Sem 1',
+          'count': 1
+        }, {
+          'week': 'Week 2',
+          'location': 'Year 1 Sem 1',
+          'count': 4
+        }, {
+          'week': 'Week 3',
+          'location': 'Year 1 Sem 1',
+          'count': 8
+        }, {
+          'week': 'Week 4',
+          'location': 'Year 1 Sem 2',
+          'count': 2
+        }, {
+          'week': 'Week 5',
+          'location': 'Year 1 Sem 2',
+          'count': 1
+        }, {
+          'week': 'Week 3',
+          'location': 'Year 2 Sem 1',
+          'count': 3
+        }, {
+          'week': 'Week 2',
+          'location': 'Year 2 Sem 1',
+          'count': 8
+        }, {
+          'week': 'Week 4',
+          'location': 'Year 2 Sem 2',
+          'count': 7
+        }, {
+          'week': 'Week 9',
+          'location': 'Year 2 Sem 2',
+          'count': 3
+        }, {
+          'week': 'Week 13',
+          'location': 'Year 3 Sem 1',
+          'count': 3
+        }, {
+          'week': 'Week 13',
+          'location': 'Year 3 Sem 1',
+          'count': 3
+        }, {
+          'week': 'Week 12',
+          'location': 'Year 3 Sem 2',
+          'count': 3
+        }, {
+          'week': 'Week 13',
+          'location': 'Year 3 Sem 2',
+          'count': 5
+        }]
+      },
       tableData: [{
         date: '2018-05-03',
         module: 'BT3102',
@@ -269,7 +325,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54895" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50462" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
