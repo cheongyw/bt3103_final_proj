@@ -7,6 +7,7 @@
 
 
   <link rel='stylesheet' href='https://unpkg.com/element-ui@1.1.6/lib/theme-default/index.css'>
+  <link rel="stylesheet" href="node_modules/vue-calendar-heatmap/dist/vue-calendar-heatmap.css"/>
   <link rel="stylesheet" href="css/style.css">
 
 
@@ -95,36 +96,48 @@
         <div class="text item">
           {{ item.value }}
         </div>
-        <div>
-          <vuejs-heatmap
-            :entries="[{id:1,counting:412,created_at:'2018-01-20'},{id:2,counting:512,created_at:'2018-02-24'},{id:3,counting:622,created_at:'2018-03-24'}]"
-            :tooltip-enabled="true"
-            :color-range="['cyan', 'blue']"
-            :tooltip-unit="'Frog'"
-            :legend-enabled="false"
-            :locale="{
-          months: ['YZA', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-          days: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-          No: 'No',
-          on: 'on',
-          Less: 'Less',
-          More: 'More'
-        }"
-            :max="700"
-            :on-click=test>
-      </vuejs-heatmap>
-        </div>
       <el-col>
     </el-card>
-
-
+      </br> </br>
     </div> <!-- container -->
+    <!-- <div>
+      <calendar-heatmap :values="[{ date: '2018-9-22', count: 6 }, { date: '2018-9-23', count: 8 } ]" />
+    </div> -->
+
+    <div class="container">
+    <el-col>
+    <el-table
+      :data="tableData"
+      style="width: 100%">
+      <el-table-column
+        prop="date"
+        label="Date"
+        width="120">
+      </el-table-column>
+      <el-table-column
+        prop="module"
+        label="Module"
+        width="120">
+      </el-table-column>
+      <el-table-column
+        prop="question"
+        label="Question">
+      </el-table-column>
+      <el-table-column
+        prop="comments"
+        label="Comments"
+        width="120">
+      </el-table-column>
+    </el-table>
+  </el-col>
+</div>
   </div>
 
 </div> <!-- #app -->
 
   <script src='https://unpkg.com/vue/dist/vue.js'></script>
   <script src='https://unpkg.com/element-ui@1.2.9/lib/index.js'></script>
+  <script src='node_modules/vue-calendar-heatmap/dist/vue-calendar-heatmap.browser.js'></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 	<script src="https://unpkg.com/chart.js@2.7.2/dist/Chart.bundle.js"></script>
 	<script src="https://unpkg.com/vue-chartkick@0.4.0"></script>

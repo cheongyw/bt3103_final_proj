@@ -9,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "vue-calendar-heatmap": "^0.8.4",
     "vuejs-heatmap": "^1.1.7"
   },
   "devDependencies": {

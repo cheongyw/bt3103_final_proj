@@ -34,10 +34,32 @@ new Vue({
       { name: 'Analytics for Market Trading', sport: 'BT4013', views: 403, color: '#C8D96F' },
       { name: 'Data Driven Marketing', sport: 'BT4211', views: 8843, color: '#7678ED' }],
 
+      tableData: [{
+        date: '2018-05-03',
+        module: 'BT3102',
+        question: 'How do I make sense of the regression line?',
+        comments: '5'
+      }, {
+        date: '2018-05-02',
+        module: 'BT3101',
+        question: 'What are some data visualisations for showing multi-dimenstional data?',
+        comments: '4'
+      }, {
+        date: '2018-04-04',
+        module: 'CS2010',
+        question: 'Why is it better to use BFS than DFS in example 3?',
+        comments: '9'
+      }, {
+        date: '2018-04-08',
+        module: 'CS1020',
+        question: 'How do I use recursion to do depth first search?',
+        comments: '2'
+      }],
+
       dashboardStats: [
-      { title: 'Questions asked in Total', value: '40', color: '#000'},
-      { title: 'Questions asked this Sem', value: '21', color: '#000'},
-      { title: 'Learner Level', value: 'AVID', color: '#000'}] };
+      { title: 'Questions asked in Total', value: '4', color: '#000'},
+      { title: 'Questions asked this Sem', value: '2', color: '#000'},
+      { title: 'Asker Level', value: 'Novice', color: '#000'}] };
   },
   computed: {
     getPlayers: function getPlayers() {var _this = this;
