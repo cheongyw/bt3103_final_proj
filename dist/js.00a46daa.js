@@ -149,32 +149,38 @@ new Vue({
         name: 'Regression Analysis',
         sport: 'BT3131',
         views: 112,
-        color: '#FFC43D'
+        color: '#FFC43D',
+        url: '/regression'
       }, {
         name: 'Capstone Project',
         sport: 'BT3101',
         views: 23121,
-        color: '#43BCCD'
+        color: '#43BCCD',
+        url: '/regression'
       }, {
         name: 'Big Data Technologies',
         sport: 'BT4221',
         views: 231,
-        color: '#F86624'
+        color: '#F86624',
+        url: '/bigdata'
       }, {
         name: 'Application Development',
         sport: 'BT3103',
         views: 443,
-        color: '#06D6A0'
+        color: '#06D6A0',
+        url: '/regression'
       }, {
         name: 'Analytics for Market Trading',
         sport: 'BT4013',
         views: 403,
-        color: '#C8D96F'
+        color: '#C8D96F',
+        url: '/analytics'
       }, {
         name: 'Data Driven Marketing',
         sport: 'BT4211',
         views: 8843,
-        color: '#7678ED'
+        color: '#7678ED',
+        url: '/marketing'
       }],
       chartData: {
         columns: ['week', 'location', 'count'],
@@ -325,7 +331,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50462" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54315" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
