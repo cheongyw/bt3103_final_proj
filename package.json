@@ -8,7 +8,9 @@
     "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "vuejs-heatmap": "^1.1.7"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-jest": "^23.6.0",

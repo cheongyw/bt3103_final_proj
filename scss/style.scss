@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
 $material-shadow: 0 1px 3px 0 rgba(0,0,0,.15);
 
@@ -9,7 +9,6 @@ $material-shadow: 0 1px 3px 0 rgba(0,0,0,.15);
 body {
   margin: 0;
   padding: 0;
-  background-color: #123;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -25,8 +24,8 @@ body {
 .container {
   max-width: 980px;
   margin: 20px auto;
-  @media screen and (max-width: 1050px) { 
-    width: 95%; 
+  @media screen and (max-width: 1050px) {
+    width: 95%;
   }
 }
 
@@ -38,13 +37,12 @@ body {
   box-shadow: $material-shadow;
   min-height: 150px;
   border-radius: 5px;
-  background-color: white;
   margin-bottom: 10px;
-  &__subtitle { 
-    color: lighten(grey, 15%); 
+  &__subtitle {
+    color: black;
   }
   &__empty {
-    background-color: transparent; box-shadow: none 
+    background-color: transparent; box-shadow: none
   }
   &:hover { cursor: pointer; }
 }

@@ -1,10 +1,10 @@
-// Thanks Dev Coffee! :) 
+// Thanks Dev Coffee! :)
 // https://www.youtube.com/watch?v=VPUdtEf3oXI
 
 new Vue({
   el: '#app',
   data: function() {
-    return { 
+    return {
       filter: '',
       sort: '',
       options: [
@@ -12,22 +12,22 @@ new Vue({
         { label: 'Most Viewed', value: 'views' },
       ],
       players: [
-        { name: 'Regression Analysis', sport: 'BT3131', views: 112},
-        { name: 'Tony Domo', sport: 'Football', views: 23121 },
-        { name: 'Rump Baker', sport: 'Basketball', views: 231},
-        { name: 'Brad Pitt', sport: 'Acting', views: 443},
-        { name: 'Kermit the Frog', sport: 'Frogball', views: 403},
-        { name: 'Taylor Swift', sport: 'Singing', views: 8843}
+        { name: 'Regression Analysis', sport: 'BT3131', views: 112, color: '#FFC43D'},
+        { name: 'Tony Domo', sport: 'Football', views: 23121, color: '#FFC43D' },
+        { name: 'Rump Baker', sport: 'Basketball', views: 231, color: '#FFC43D'},
+        { name: 'Brad Pitt', sport: 'Acting', views: 443, color: '#FFC43D'},
+        { name: 'Kermit the Frog', sport: 'Frogball', views: 403, color: '#FFC43D'},
+        { name: 'Taylor Swift', sport: 'Singing', views: 8843, color: '#FFC43D'}
       ]
     }
   },
   computed: {
     getPlayers() {
-      
+
       var players = this.players.filter((player) => {
           return player.name.toLowerCase().includes(this.filter.toLowerCase());
         });
-      
+
       if (this.sort == 'views') {
         return players.sort(function(a, b) {
           return b.views - a.views
@@ -35,7 +35,7 @@ new Vue({
       } else {
         return players;
       }
-      
+
     }
   }
 })

@@ -105,10 +105,31 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   // Override the current require with this new one
   return newRequire;
 })({"js/index.js":[function(require,module,exports) {
-// Thanks Dev Coffee! :)
-// https://www.youtube.com/watch?v=VPUdtEf3oXI
+var Bar = {
+  template: '<div>TEMP</div>' // 2. Define some routes
+  // Each route should map to a component.
+
+};
+var routes = [{
+  path: '/ask',
+  component: Bar
+}, {
+  path: '/questions',
+  component: Bar
+}, {
+  path: '/reports',
+  component: Bar
+}]; // 3. Create the router instance and pass the `routes` option
+// You can pass in additional options here, but let's
+// keep it simple for now.
+
+var router = new VueRouter({
+  routes: routes // short for `routes: routes`
+
+});
 new Vue({
   el: '#app',
+  router: router,
   data: function data() {
     return {
       filter: '',
@@ -123,27 +144,46 @@ new Vue({
       players: [{
         name: 'Regression Analysis',
         sport: 'BT3131',
-        views: 112
+        views: 112,
+        color: '#FFC43D'
       }, {
         name: 'Capstone Project',
         sport: 'BT3101',
-        views: 23121
+        views: 23121,
+        color: '#43BCCD'
       }, {
         name: 'Big Data Technologies',
         sport: 'BT4221',
-        views: 231
+        views: 231,
+        color: '#F86624'
       }, {
         name: 'Application Development',
         sport: 'BT3103',
-        views: 443
+        views: 443,
+        color: '#06D6A0'
       }, {
         name: 'Analytics for Market Trading',
         sport: 'BT4013',
-        views: 403
+        views: 403,
+        color: '#C8D96F'
       }, {
         name: 'Data Driven Marketing',
         sport: 'BT4211',
-        views: 8843
+        views: 8843,
+        color: '#7678ED'
+      }],
+      dashboardStats: [{
+        title: 'Questions asked in Total',
+        value: '40',
+        color: '#000'
+      }, {
+        title: 'Questions asked this Sem',
+        value: '21',
+        color: '#000'
+      }, {
+        title: 'Learner Level',
+        value: 'AVID',
+        color: '#000'
       }]
     };
   },
@@ -162,10 +202,14 @@ new Vue({
       } else {
         return players;
       }
+    },
+    currentRoute: function currentRoute() {
+      // We will see what `params` is shortly
+      return this.$route.path;
     }
   }
 });
-},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -192,7 +236,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58258" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62270" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
@@ -334,5 +378,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},["../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
 //# sourceMappingURL=/js.00a46daa.map

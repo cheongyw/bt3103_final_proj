@@ -7,8 +7,7 @@
 
 
   <link rel="stylesheet" href="https://unpkg.com/element-ui@1.1.6/lib/theme-default/index.css">
-
-      <link rel="stylesheet" href="/style.78032849.css">
+  <link rel="stylesheet" href="/style.78032849.css">
 
 
 <script src="/style.78032849.js"></script></head>
@@ -16,93 +15,106 @@
 <body>
 
   <div id="app" v-cloak="">
-      <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#fff" text-color="#fff" active-text-color="#ffd04b">
+    <el-menu class="el-menu-mine" mode="horizontal" background-color="#123123" text-color="#000" active-text-color="#ffd04b">
       <el-row>
         <el-col :span="4" class="navbar__logo-box">
           <img src="/logo.d9cf16c7.png" alt="" vspace="11" class="navbar__logo">
           <el-menu-item index="1">JUST ASK!</el-menu-item>
         </el-col>
         <el-col :span="20" class="navbar__menu-box">
-          <el-menu-item index="2" disabled="">Suggested Questions</el-menu-item>
-          <el-menu-item index="3" disabled="">My Questions</el-menu-item>
-          <el-menu-item index="4" disabled="">My Modules</el-menu-item>
-          <el-submenu index="5">
+          <el-menu-item index="ask">
+            <router-link to="ask">Ask Anything</router-link>
+          </el-menu-item>
+          <el-menu-item index="questions">
+            <router-link to="questions">My Questions</router-link>
+          </el-menu-item>
+          <el-submenu index="reports">
             <template slot="title">Reports</template>
-            <el-menu-item index="2-1">GPA</el-menu-item>
-            <el-menu-item index="2-2">Demographic</el-menu-item>
+            <el-menu-item index="4-1">GPA</el-menu-item>
+            <el-menu-item index="4-2">Demographic</el-menu-item>
           </el-submenu>
         </el-col>
       </el-row></el-menu>
   
 
-  <script>"use strict";
+  <div v-if="currentRoute === '/ask'">
+    <div class="container">
+     <el-row class="search-wrapper" :gutter="10">
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  data: function data() {
-    return {
-      activeIndex: '1',
-      activeIndex2: '1'
-    };
-  },
-  methods: {
-    handleSelect: function handleSelect(key, keyPath) {
-      console.log(key, keyPath);
-    }
-  }
-};
-exports.default = _default;</script>
+       <el-col :lg="12" :md="12" :sm="12" :xs="24">
+         <el-input placeholder="Search Module Code / Topic" icon="search" v-model="filter">
+       </el-input></el-col>
 
- <div class="container">
+       <el-col class="col-space" :lg="6" :md="6" :sm="6" :xs="24"> &nbsp; </el-col>
 
-  <el-row class="search-wrapper" :gutter="10">
+       <el-col :lg="6" :md="6" :sm="6" :xs="24">
+         <el-select v-model="sort" placeholder="Sort by">
+           <el-option v-for="item in options" :label="item.label" :value="item.value">
+           </el-option>
+         </el-select>
+       </el-col>
 
-    <el-col :lg="12" :md="12" :sm="12" :xs="24">
-      <el-input placeholder="Filter by Name" icon="search" v-model="filter">
-    </el-input></el-col>
+     </el-row> <!-- search wrapper -->
+     <br> <br>
 
-    <el-col class="col-space" :lg="6" :md="6" :sm="6" :xs="24"> &nbsp; </el-col>
+     <el-row :gutter="10">
+       <el-col v-for="player in getPlayers" :xs="24" :sm="12" :md="8">
+         <div class="box" v-bind:style="{backgroundColor: player.color}">
+           <div> {{ player.name }}</div>
+           <div class="box__subtitle"> {{ player.sport }} </div>
+           <div class="box__subtitle"> {{ player.views }} views </div>
+         </div>
+       </el-col>
 
-    <el-col :lg="6" :md="6" :sm="6" :xs="24">
-      <el-select v-model="sort" placeholder="Sort by">
-        <el-option v-for="item in options" :label="item.label" :value="item.value">
-        </el-option>
-      </el-select>
-    </el-col>
+       <el-col v-if="getPlayers.length === 0" :xs="24" :sm="24" :md="24">
+         <div class="box box__empty"> No Match Found</div>
+       </el-col>
 
-  </el-row> <!-- search wrapper -->
+     </el-row> <!-- results -->
 
-  <el-row :gutter="10">
-    <el-col v-for="player in getPlayers" :xs="24" :sm="12" :md="8">
-      <div class="box">
-        <div> {{ player.name }} </div>
-        <div class="box__subtitle"> {{ player.sport }} </div>
-        <div class="box__subtitle"> {{ player.views }} views </div>
-      </div>
-    </el-col>
+    </div> <!-- container -->
+  </div>
 
-    <el-col v-if="getPlayers.length === 0" :xs="24" :sm="24" :md="24">
-      <div class="box box__empty"> No Match Found</div>
-    </el-col>
 
-  </el-row> <!-- results -->
+  <div v-if="currentRoute === '/questions'">
+    <div class="container">
+     <br> <br>
+    <el-col v-for="item in dashboardStats" :xs="24" :sm="12" :md="8">
+      <el-card class="box-card">
+        <div slot="header" class="clearfix">
+          <span>{{ item.title }}</span>
+        </div>
+        <div class="text item">
+          {{ item.value }}
+        </div>
+        <div>
+          <vuejs-heatmap :entries="[{id:1,counting:412,created_at:'2018-01-20'},{id:2,counting:512,created_at:'2018-02-24'},{id:3,counting:622,created_at:'2018-03-24'}]" :tooltip-enabled="true" :color-range="['cyan', 'blue']" :tooltip-unit="'Frog'" :legend-enabled="false" :locale="{
+          months: ['YZA', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          days: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+          No: 'No',
+          on: 'on',
+          Less: 'Less',
+          More: 'More'
+        }" :max="700" :on-click="test">
+      </vuejs-heatmap>
+        </div>
+      <el-col>
+    </el-col></el-card>
 
- </div> <!-- container -->
+
+    </el-col></div> <!-- container -->
+  </div>
 
 </div> <!-- #app -->
+
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/element-ui@1.1.6/lib/index.js"></script>
-
-
-
-    <script src="/js.00a46daa.js"></script>
-
-
-
+  <script src="https://unpkg.com/element-ui@1.2.9/lib/index.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+	<script src="https://unpkg.com/chart.js@2.7.2/dist/Chart.bundle.js"></script>
+	<script src="https://unpkg.com/vue-chartkick@0.4.0"></script>
+	<script src="https://gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+	<script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+  <script src="/js.00a46daa.js"></script>
 
 </body>
-
 </html>

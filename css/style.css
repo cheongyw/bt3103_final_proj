@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 [v-cloak] {
   display: none;
 }
@@ -6,13 +6,13 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #123;
   font-family: 'Open Sans', sans-serif;
 }
 
 .search-wrapper {
   margin: 10px 0;
 }
+
 
 .col-space {
   content: '&nbsp;';
@@ -33,6 +33,10 @@ body {
   }
 }
 
+.el-menu-mine {
+  background-color: #edf6ff;
+}
+
 .box {
   display: flex;
   flex-direction: column;
@@ -41,11 +45,11 @@ body {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
   min-height: 150px;
   border-radius: 5px;
-  background-color: white;
   margin-bottom: 10px;
 }
 .box__subtitle {
-  color: #a6a6a6;
+  color: black;
+  font-size: 13px;
 }
 .box__empty {
   background-color: transparent;
