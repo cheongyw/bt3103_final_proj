@@ -105,6 +105,8 @@
 
     <div class="container">
     <el-col>
+    <column-chart :colors="['#1E7BE4']" :data="charts.barData2.data"></column-chart>
+    </br></br>
     <el-table
       :data="tableData"
       style="width: 100%">
@@ -135,10 +137,7 @@
 
   <div class="container">
   <el-col>
-    <column-chart :data="charts.barData2.data"></column-chart>
-  </br></br>
-    <timeline :data="[['Y1S1', '1789-04-29', '1797-03-03'], ['Y1S2', '1797-04-29', '1797-10-03'], ['Y1S3', '1797-03-03', '1801-03-03']]"></timeline>
-
+    <timeline :data="[['Y1S1', '1789-04-29', '1797-03-03'], ['Y1S2', '1797-04-29', '1797-10-03'], ['Y2S1', '1797-03-03', '1801-03-03'],  ['Y1S3', '1797-03-03', '1801-03-03']]"></timeline>
   </el-col>
   </div>
   </div>
